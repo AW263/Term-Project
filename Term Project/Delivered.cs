@@ -132,17 +132,18 @@ namespace Term_Project
         public void Status(int id)
         {
             Node current = head;
-
+            bool IsTrue = false;
             while (current.Next != null)
             {
                 if (current.Element.Id.Equals(id))
                 {
-
+                    IsTrue = true;
                     break;
 
                 }
+                current = current.Next;
             }
-            if (current.Element.Delivered == false)
+            if (IsTrue == true)
                 Console.WriteLine("The items are still not delivered");
             else
                 Console.WriteLine("The items are delivered");
@@ -185,14 +186,14 @@ namespace Term_Project
         public IEnumerator<Delivery> GetEnumerator()
         {
             Node current = head;
-            Node prev = null;
+           
             while (current.Next != null)
             {
                 yield return current.Element;
-                prev = current;
+               
                 current = current.Next;
             }
-
+            yield return current.Element;
         }
 
         

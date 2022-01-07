@@ -45,9 +45,7 @@ namespace Term_Project
                 }
                 else if(command[0]=="Status")
                 {
-                    if (!deliviries.Contains(int.Parse(command[1])))
-                        Console.WriteLine("Wrong id");
-                    else
+                   
                         deliviries.Status(int.Parse(command[1]));
 
                 }
@@ -57,7 +55,7 @@ namespace Term_Project
                     if (!deliviries.Contains(int.Parse(command[1])))
                         Console.WriteLine("Wrong id");
                     else
-                    deliviries.Redirect(int.Parse(newa[0]), newa[1], newa[2], newa[3], int.Parse(newa[4]));
+                    deliviries.Redirect(int.Parse(command[1]), newa[0], newa[1], newa[2], int.Parse(newa[3]));
                    
                 }
                 else if(command[0]=="End")

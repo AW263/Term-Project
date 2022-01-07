@@ -140,20 +140,21 @@ namespace Term_Project
         public void Status(int id)
         {
             Node current = head;
-            
+            bool isTrue = false;
             while (current.Next != null)
             {
                 if (current.Element.Id.Equals(id))
                 {
-                    
+                    isTrue = true;
                     break;
 
                 }
+                current = current.Next;
             }
-            if (current.Element.Delivered == false)
+            if (isTrue == true)
                 Console.WriteLine("The items are still not delivered");
-            else 
-                Console.WriteLine("The items are delivered");
+            else
+                deliveries.Status(id);
         }
         public void Redirect(int id, string country, string city, string street, int number)
         {
@@ -167,6 +168,7 @@ namespace Term_Project
                     break;
 
                 }
+                current = current.Next;
             }
             current.Element.Country = country;
             current.Element.City = city;
@@ -184,6 +186,7 @@ namespace Term_Project
                     break;
 
                 }
+                current = current.Next;
             }
             current.Element.FirstName = fisrtName;
             current.Element.LastName = lastName;
@@ -222,6 +225,7 @@ namespace Term_Project
         {
             foreach (Delivery item in deliveries)
             {
+                item.ToString();
                 Console.WriteLine($"ID: {item.Id}, Country: {item.Country}, City: {item.City}, Street: {item.Street}, Person: {item.FirstName} {item.LastName}");
             }
         }
