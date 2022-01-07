@@ -196,11 +196,11 @@ namespace Term_Project
         public IEnumerator<Delivery> GetEnumerator()
         {
             Node current = head;
-            Node prev = null;
+            
             while (current.Next != null)
             {
                 yield return current.Element;
-                prev = current;
+               
                 current = current.Next;
             }
             
@@ -225,7 +225,7 @@ namespace Term_Project
         {
             foreach (Delivery item in deliveries)
             {
-                item.ToString();
+              
                 Console.WriteLine($"ID: {item.Id}, Country: {item.Country}, City: {item.City}, Street: {item.Street}, Person: {item.FirstName} {item.LastName}");
             }
         }

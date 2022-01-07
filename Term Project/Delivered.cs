@@ -144,7 +144,7 @@ namespace Term_Project
                 current = current.Next;
             }
             if (IsTrue == true)
-                Console.WriteLine("The items are still not delivered");
+                Console.WriteLine("Wrong id");
             else
                 Console.WriteLine("The items are delivered");
         }
